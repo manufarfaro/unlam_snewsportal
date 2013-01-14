@@ -1,4 +1,4 @@
 unlam_snewsportal
 =================
 
-It's an notices portal php poo based
+It's an notices portal php oop based
