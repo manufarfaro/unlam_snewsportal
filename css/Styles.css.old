@@ -1,0 +1,98 @@
+﻿/**
+* StyleSheet Document.
+*/
+
+body 
+{
+    margin:0;
+    font-family: Verdana, Arial, Sans-Serif;
+    font-size: 12px;
+    background: #dddddd;
+    padding:0;
+}
+
+/* Structure ID's */
+div#body_structure
+{
+    width:950px;
+    margin: 0px auto 0px auto;
+}
+
+div#body_structure_head
+{
+    height:100px;
+    background:url("../images/head_background.jpg");
+}
+
+div#body_structure
+{
+}
+
+div#body_structure_head
+{
+}
+
+div#body_structure_menu
+{
+    height:40px;
+    background: #333333;
+    padding-left:15px;
+}
+
+div#body_structure_main
+{
+    padding:20px;
+    min-height: 200px;
+    background: #eeeeee;
+}
+
+div#body_structure_footer
+{
+    height:30px;
+    background: #333333;
+}
+
+div#head_image_logo img 
+{
+    border:0;
+    margin:10px auto auto 10px;
+}
+
+
+div#footer_credits
+{
+    width:auto;
+    text-align:right;
+    padding-right:10px;
+    line-height:30px;
+    color: #eeeeee;
+}
+
+/* Structure Classes */
+
+.menu_element
+{
+    display:inline;
+    margin: 5px;
+}
+
+.menu_element a
+{
+    text-decoration: none;
+    font-weight:bolder;
+    font-size: 1.2em;
+    line-height:40px;
+    color: #cccccc;
+}
+
+.menu_element a:hover
+{
+    color: #eeeeee;
+}
+
+/* Common use Classes */
+
+.rounded_top_corners
+{
+    
+}

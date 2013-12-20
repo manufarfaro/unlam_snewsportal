@@ -1,0 +1,389 @@
+/**
+* StyleSheet Document.
+*/
+
+body 
+{
+    margin:0;
+    font-family: Verdana, Arial, Sans-Serif;
+    font-size: 12px;
+    background: #dddddd;
+    padding:0;
+}
+
+/* Structure ID's */
+div#body_structure
+{
+    width:950px;
+    margin: 0px auto 0px auto;
+}
+
+div#body_structure_head
+{
+    min-height:100px;
+    background:url("../images/head_background.jpg");
+}
+
+div#body_structure
+{
+}
+
+div#body_structure_head
+{
+}
+
+div#body_structure_menu
+{
+    height:40px;
+    background: #333333;
+    padding-left:15px;
+}
+
+div#body_structure_main
+{
+    padding:20px;
+    min-height: 200px;
+    background: #eeeeee;
+}
+
+div#body_structure_footer
+{
+    height:30px;
+    background: #333333;
+}
+
+div#head_image_logo img 
+{
+    border:0;
+    margin:10px auto auto 10px;
+}
+
+
+div#footer_credits
+{
+    width:auto;
+    text-align:right;
+    padding-right:10px;
+    line-height:30px;
+    color: #eeeeee;
+}
+
+
+#gradient-style
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	/*margin: 45px;*/
+	/*width: 480px;*/
+	width:100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+#gradient-style th
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe  repeat-x;
+	border-top: 2px solid #d3ddff;
+	border-bottom: 1px solid #fff;
+	color: #039;
+	text-align: left;
+}
+#gradient-style td
+{
+	vertical-align:text-top;
+	padding: 8px; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid #fff;
+	background: #e8edff repeat-x;
+}
+#gradient-style tfoot tr td
+{
+	background: #e8edff;
+	font-size: 12px;
+	color: #99c;
+}
+#gradient-style tbody tr:hover td
+{
+	background: #d0dafd repeat-x;
+	color: #339;
+}
+
+/* Structure Classes */
+
+#menu_navigation
+{
+    margin:0;
+    padding:0;
+    line-height:40px;
+    font-weight:bolder;
+    color: #cccccc;
+}
+
+#menu_navigation li{
+	float:left;
+	display:block;
+	position:relative;
+    list-style:none;
+    background:#333333;
+    margin-right:10px;  
+}
+
+
+     
+        /* submenu, it's hidden by default */
+        #menu_navigation ul {
+        	display:none;
+            position:absolute;
+            margin:0 0 0 -5px;
+            padding:0;
+        }
+        #menu_navigation ul li{
+        	padding:0px 5px 0px 5px;
+        	border: 1px solid #222222;        	
+        }
+        #menu_navigation ul li a{
+        	text-decoration: none;
+        	text-align: center;
+        	width:180px;
+        	display:block;
+        	font-weight:bolder;
+        	color: #cccccc;
+        }
+		#menu_navigation ul li a:hover{
+		    color: #eeeeee;
+		}
+/* Common use Classes */
+
+.rounded_top_corners
+{
+    
+}
+.menu_element{
+	
+}
+.newsContainer
+{
+	background-color: #F5F3F3;
+}
+
+
+.topBar
+{
+	font-size: 25px;
+	padding: 0 0 10px 0;
+}
+
+
+.headLine
+{
+	font-size: 17px;
+	font-weight: bold;
+	padding: 5px 10px;
+	
+	background-color:#D9D5A8;
+    -moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	font-size:14px;
+}
+
+.left
+{
+	display:inline;
+    width:30%;
+	float: left;
+	height: 130px;
+
+}
+.right
+{
+	display:inline;
+	float: right;
+    width:70%;
+    height: 130px;
+    text-align:right;
+
+}	
+
+.right input,textarea 
+{	
+	width: 95%;
+}
+
+.right textarea
+{
+	min-height:60px;
+}
+
+
+.lower
+{
+	padding: 10px 0;
+	font-size: 14px;
+}
+
+.inferior
+{
+	text-align: right;
+	padding-top: 10px;
+	
+}
+
+
+.data
+{
+	font-size: 11px;
+	padding:4px 0 4px 0;
+	font-weight:bold;
+}
+
+
+.content
+{
+	padding: 20px 10px;
+	background-color:White;
+    color:#333333;
+    font-size:11pt;
+    line-height:1.3em;
+}
+
+.sectionComment
+{
+	padding: 10px 10px;
+	margin: 10px 0;
+	background-color: white;
+	
+}
+.comment
+{
+	padding: 15px 10px 10px 10px;
+	background-color: #DAD9D5;
+	margin-bottom: 10px;
+	min-height: 180px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+}
+
+.comments
+{
+	margin-bottom:45px;
+}
+
+.title
+{
+	
+}
+
+.barComment
+{
+	font-size:14px;
+	font-weight: bold;
+}
+
+.barComment2
+{
+	font-size:14px;
+	font-weight: bold;
+	padding:0 10px;
+}
+
+
+
+
+.intLeft
+{
+	display:inline;
+    width:20%;
+	float: left;
+}
+
+
+.intRight
+{
+	display:inline;
+    width:80%;
+	float: right;
+}
+
+.line  
+{
+	padding: 10px 10px;
+	font-size: 14px;
+	min-height: 20px;
+	
+}
+
+
+#line2
+{
+	height: 210px; 
+}
+
+#line2 textarea
+{
+	min-height: 200px;
+}
+
+#inf
+{
+	text-align: center;
+	margin:5px 30px;		
+		
+}
+
+#inf input
+{
+	width:75px;
+	margin:0 5px;
+	
+}
+
+.intRight input,textarea
+{
+	width: 95%;
+}
+
+#c2 input
+{
+	width:45%;
+	
+}
+
+.middleSection
+{
+	left:20%;
+	position:relative;
+}
+
+.loginSection
+{
+	width:50%;
+	text-align: center;
+	background-color: #F6F3F3;
+	 -moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	 -moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	padding-bottom: 15px;
+	left:24%;
+	position:relative;
+}
+
+.error
+{
+	font-size: 14pt;
+	text-align: center;
+}
+
+.error img
+{
+	max-width: 200px;
+}
+
+.tableLayout{
+	margin: 20px;
+}
