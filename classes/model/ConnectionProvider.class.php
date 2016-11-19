@@ -17,7 +17,7 @@
                 $this->url = parse_url(getenv("CLEARDB_DATABASE_URL"));
                 $this->host = $this->url["host"];
                 $this->user = $this->url["user"];
-                $this->password = $this->url["password"];
+                $this->password = $this->url["pass"];
                 $this->dbName = substr($this->url["path"], 1);
             }
             $this->connectionString = "mysql:host={$this->host};dbname={$this->dbName}";

@@ -14,7 +14,7 @@
 
 			$userService = new UserService();
 			$sqlLogin = ("SELECT person_id FROM person WHERE mail = '". $_POST['username'] ."' AND userpass = '". $_POST['password'] . "'");
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			$statement = $connection->prepare($sqlLogin);
 			$statement->execute();
 			$arrUser = $statement->fetch();
