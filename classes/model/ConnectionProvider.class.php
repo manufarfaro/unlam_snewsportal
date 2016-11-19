@@ -26,7 +26,6 @@
 		public function getInstance(){
 			  if (!isset(self::$instance)){
                   try {
-                      $connectionString = "".;
                       $instance = new PDO($this->connectionString, $this->user, $this->password);
                       $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                   } catch (PDOException $e) {
