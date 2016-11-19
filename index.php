@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
     <title>TP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="Stylesheet" charset="utf-8" href="./css/Styles.css" />
     <script type="text/javascript" charset="utf-8" src="./includes/javascript/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="./scripts/standart.js"></script>
