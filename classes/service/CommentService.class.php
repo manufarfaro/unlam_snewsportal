@@ -10,7 +10,8 @@
 	class CommentService{
 		
 		public function getByAuthor($notice_id){
-			$connection = new ConnectionProvider();
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			$colComment = array();
 			
 			$statement = $connection->prepare("SELECT *  FROM comment WHERE notice_id = :notice_id AND isActive = '1';");
@@ -32,8 +33,9 @@
 		
 		public function addNew($comment){
 			try{
-				
-				$connection = new ConnectionProvider();
+
+                $connection = new ConnectionProvider();
+                $connection = $connection->connect();
 							
 				$statement = $connection->prepare("INSERT INTO comment (notice_id, name, text) VALUES (:notice_id, :name, :text);");
 				$statement -> bindParam(":notice_id",$comment->getNoticeId(),PDO::PARAM_INT);

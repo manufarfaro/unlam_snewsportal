@@ -12,7 +12,8 @@
 	class NoticeService implements DaoService{
 		
 		public function getAll(){
-			$connection = new ConnectionProvider();
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			$colNotices = array();
 			
 			$statement = $connection->prepare("SELECT notice_id, person_id, title, text, dateCreated, isActive  FROM notice WHERE isActive = '1' ORDER BY timestamp DESC ;");
@@ -40,7 +41,8 @@
 
 
 		public function getAllByAuthorId($person_id){
-			$connection = new ConnectionProvider();
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			$colNotices = array();
 			
 			$statement = $connection->prepare("SELECT notice_id, person_id, title, text, dateCreated, isActive  FROM notice WHERE person_id = :person_id AND isActive = '1' ORDER BY timestamp DESC ;");
@@ -81,9 +83,9 @@
 		}
 		public function addNew($notice){
 			try{
-				
+
 				$connection = new ConnectionProvider();
-							
+                $connection = $connection->connect();
 				$statement = $connection->prepare("INSERT INTO notice (person_id, title, text, dateCreated) VALUES (:person_id, :title, :text, :dataCreated);");
 				$statement -> bindParam(":person_id",$notice->getAuthor()->getId(),PDO::PARAM_INT);
 				$statement -> bindParam(":title",$notice->getTitle(),PDO::PARAM_STR);

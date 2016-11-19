@@ -13,7 +13,8 @@
 		public function __construct(){}
 		
 		public function getByRole($role_id){
-			$connection = new ConnectionProvider();
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			$colUser = array();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE role_id = :role_id AND isActive = '1';");
@@ -39,8 +40,9 @@
 		}
 		
 		public function getAll(){
-			
-			$connection = new ConnectionProvider();
+
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE isActive = '1';");
 			$statement->execute();
@@ -67,8 +69,9 @@
 		}
 		
 		public function getById($person_id){
-			
-			$connection = new ConnectionProvider();
+
+            $connection = new ConnectionProvider();
+            $connection = $connection->connect();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE person_id = :person_id AND isActive = '1';");
 			$statement -> bindParam(":person_id",$person_id,PDO::PARAM_INT);
@@ -96,7 +99,8 @@
 		
 		public function addNew( $person, $password = "none"){
 			try{
-				$connection = new ConnectionProvider();
+                $connection = new ConnectionProvider();
+                $connection = $connection->connect();
 				$statement = $connection->prepare("INSERT INTO person (mail, userpass, name, surname, role_id) VALUES (:mail, :password, :name, :surname, :role_id);");
 				$statement -> bindParam(":mail",$person->getMail(),PDO::PARAM_STR);
 				$statement -> bindParam(":password",$password,PDO::PARAM_STR);
@@ -112,7 +116,8 @@
 		
 		public function deleteById($person_id){
 			try{
-				$connection = new ConnectionProvider();
+                $connection = new ConnectionProvider();
+                $connection = $connection->connect();
 				$statement = $connection->prepare("DELETE FROM person WHERE person_id = :person_id;");
 				$statement -> bindParam(":person_id",$person_id,PDO::PARAM_INT);
 				$statement->execute();
@@ -124,7 +129,8 @@
 		
 		public function editById($objPerson, $pass_string = null){
 			try{
-				$connection = new ConnectionProvider();
+                $connection = new ConnectionProvider();
+                $connection = $connection->connect();
 				if($pass_string != null){
 					$statement = $connection->prepare("UPDATE person SET name = :name , surname = :surname , userpass = :password  WHERE person_id = :person_id;");
 					$statement -> bindParam(":name",$objPerson->getName(),PDO::PARAM_STR);

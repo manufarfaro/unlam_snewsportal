@@ -21,7 +21,9 @@
                 $this->dbName = substr($this->url["path"], 1);
             }
             $this->connectionString = "mysql:host={$this->host};dbname={$this->dbName}";
+        }
 
+        public function connect() {
             if (!isset($this->instance)){
                 try {
                     $this->instance = new PDO($this->connectionString, $this->user, $this->password);
@@ -32,6 +34,7 @@
             }
             return $this->instance;
         }
+
 		public function __clone(){}
 	    public function __wakeup(){}
 		
