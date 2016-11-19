@@ -2,22 +2,38 @@
 
 	chdir(dirname(__FILE__));
 	
-
-	require_once('../../includes/global/standart.php');
-
 	final class ConnectionProvider{
 		private static $instance;
-		
-		private function __construct(){}
 
-		//Metodo necesario para obtener la instancia del Singleton.
-		public static function getInstance(){
-			//if (!self::$instancia instanceof self){
+        private $url;
+        private $connectionString;
+        private $host = 'localhost';
+        private $user = 'user';
+        private $password = 'dev';
+        private $dbName = 'snewsportal';
+
+		private function __construct(){
+            if (getenv("CLEARDB_DATABASE_URL")){
+                $this->url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+                $this->host = $this->url["host"];
+                $this->user = $this->url["user"];
+                $this->password = $this->url["password"];
+                $this->dbName = substr($this->url["path"], 1);
+            }
+            $this->connectionString = "mysql:host={$this->host};dbname={$this->dbName}";
+        }
+
+		public function getInstance(){
 			  if (!isset(self::$instance)){
-		         $instancia = new PDO(DB_CONNECTIONSTRING, DB_USERNAME, DB_PASSWORD);
-				 $instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                  try {
+                      $connectionString = "".;
+                      $instance = new PDO($this->connectionString, $this->user, $this->password);
+                      $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                  } catch (PDOException $e) {
+                      echo "Connection Database Error: " . $e->getMessage();
+                  }
 		    }
-		    return ($instancia);
+		    return $instance;
 		}
 		
 		//Metodos magicos necesarios para evitar el uso incorrecto de la clase.
