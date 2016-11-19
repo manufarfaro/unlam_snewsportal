@@ -13,7 +13,7 @@
 		public function __construct(){}
 		
 		public function getByRole($role_id){
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			$colUser = array();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE role_id = :role_id AND isActive = '1';");
@@ -40,7 +40,7 @@
 		
 		public function getAll(){
 			
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE isActive = '1';");
 			$statement->execute();
@@ -68,7 +68,7 @@
 		
 		public function getById($person_id){
 			
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			
 			$statement = $connection->prepare("SELECT * FROM person WHERE person_id = :person_id AND isActive = '1';");
 			$statement -> bindParam(":person_id",$person_id,PDO::PARAM_INT);
@@ -96,7 +96,7 @@
 		
 		public function addNew( $person, $password = "none"){
 			try{
-				$connection = ConnectionProvider::getInstance();
+				$connection = new ConnectionProvider();
 				$statement = $connection->prepare("INSERT INTO person (mail, userpass, name, surname, role_id) VALUES (:mail, :password, :name, :surname, :role_id);");
 				$statement -> bindParam(":mail",$person->getMail(),PDO::PARAM_STR);
 				$statement -> bindParam(":password",$password,PDO::PARAM_STR);
@@ -104,27 +104,27 @@
 				$statement -> bindParam(":surname",$person->getSurname(),PDO::PARAM_STR);
 				$statement -> bindParam(":role_id",$person->getRole(),PDO::PARAM_INT);
 				$statement->execute();
-			}catch(exception $error){
-				/* Do Nothing */
+			}catch(exception $e){
+                echo "No se ha podido guardar: " . $e->getMessage();
 			}
 			
 		}
 		
 		public function deleteById($person_id){
 			try{
-				$connection = ConnectionProvider::getInstance();
+				$connection = new ConnectionProvider();
 				$statement = $connection->prepare("DELETE FROM person WHERE person_id = :person_id;");
 				$statement -> bindParam(":person_id",$person_id,PDO::PARAM_INT);
 				$statement->execute();
-			}catch(exception $error){
-				/* Do Nothing */
+			}catch(Exception $e){
+                echo "No se ha podido borrar: " . $e->getMessage();
 			}
 			
 		}
 		
 		public function editById($objPerson, $pass_string = null){
 			try{
-				$connection = ConnectionProvider::getInstance();
+				$connection = new ConnectionProvider();
 				if($pass_string != null){
 					$statement = $connection->prepare("UPDATE person SET name = :name , surname = :surname , userpass = :password  WHERE person_id = :person_id;");
 					$statement -> bindParam(":name",$objPerson->getName(),PDO::PARAM_STR);
@@ -141,8 +141,8 @@
 				
 				$statement->execute();
 				return(true);
-			}catch(exception $error){
-				/* Do Nothing */
+			}catch(Exception $e){
+                echo "No se ha podido editar: " . $e->getMessage();
 				return (false);
 			}
 		}

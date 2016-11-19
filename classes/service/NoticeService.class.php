@@ -12,7 +12,7 @@
 	class NoticeService implements DaoService{
 		
 		public function getAll(){
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			$colNotices = array();
 			
 			$statement = $connection->prepare("SELECT notice_id, person_id, title, text, dateCreated, isActive  FROM notice WHERE isActive = '1' ORDER BY timestamp DESC ;");
@@ -40,7 +40,7 @@
 
 
 		public function getAllByAuthorId($person_id){
-			$connection = ConnectionProvider::getInstance();
+			$connection = new ConnectionProvider();
 			$colNotices = array();
 			
 			$statement = $connection->prepare("SELECT notice_id, person_id, title, text, dateCreated, isActive  FROM notice WHERE person_id = :person_id AND isActive = '1' ORDER BY timestamp DESC ;");
@@ -69,7 +69,7 @@
 
 		public function deleteById($notice_id){
 			try{
-				$connection = ConnectionProvider::getInstance();
+				$connection = new ConnectionProvider();
 								
 				$statement = $connection->prepare("DELETE FROM notice WHERE notice_id = :notice_id AND isActive = '1';");
 				$statement -> bindParam(":notice_id",$notice_id,PDO::PARAM_INT);
@@ -82,7 +82,7 @@
 		public function addNew($notice){
 			try{
 				
-				$connection = ConnectionProvider::getInstance();
+				$connection = new ConnectionProvider();
 							
 				$statement = $connection->prepare("INSERT INTO notice (person_id, title, text, dateCreated) VALUES (:person_id, :title, :text, :dataCreated);");
 				$statement -> bindParam(":person_id",$notice->getAuthor()->getId(),PDO::PARAM_INT);
@@ -92,8 +92,8 @@
 				
 				$statement->execute();
 				
-			}catch(exception $error){
-				/* Do Nothing. */
+			}catch(Exception $e){
+                echo "No se ha podido guardar: " . $e->getMessage();
 			}
 			
 		}
