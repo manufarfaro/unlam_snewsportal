@@ -43,11 +43,14 @@ if (isset($_SESSION['UserLogged'])) {
 		$includePath = "includes/view/indexLoginView.php";
 	}
 ?>
-
+<?php
+	header('Content-Type: text/html; charset=utf-8');
+?>
 <!doctype html>
 <html>
 	<head>
 		<title>sNewsPortal - Administraci&oacute;n</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link type="text/css" rel="Stylesheet" charset="utf-8" href="./css/Styles.css" />
 		<script type="text/javascript" charset="utf-8" src="./includes/javascript/jquery-1.7.2.min.js"></script>
