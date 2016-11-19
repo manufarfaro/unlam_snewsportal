@@ -18,14 +18,14 @@
 	<div class="newsContainer">
 		<div class="headLine">	
 			<div class="title">
-				<?php echo(htmlentities($colNotices[$key]->getTitle())); ?>
+				<?php echo($colNotices[$key]->getTitle()); ?>
 			</div>
 			<div class="data">
-				por <?php echo(htmlentities($colNotices[$key]->getAuthor()->getName())); ?>, <?php echo(htmlentities($colNotices[$key]->getCreatedDate())); ?>
+				por <?php echo($colNotices[$key]->getAuthor()->getName()); ?>, <?php echo($colNotices[$key]->getCreatedDate()); ?>
 			</div>
 		</div>
 		<div class="content">
-			<?php echo(htmlentities($colNotices[$key]->getText())); ?>
+			<?php echo($colNotices[$key]->getText()); ?>
 		</div>
 		
 		<form id="postReview" method="post" action="./classes/action/addNewComment.php">
@@ -66,10 +66,10 @@
 				<?php foreach ($colComments = $colNotices[$key]->getComments() as $key => $value): ?>
 					<div class="sectionComment">
 						<div class="data">
-							<?php echo($colComments[$key]->getCreatedDate()); ?> <?php echo(htmlentities($colComments[$key]->getAuthorName())); ?> dijo:
+							<?php echo($colComments[$key]->getCreatedDate()); ?> <?php echo($colComments[$key]->getAuthorName()); ?> dijo:
 						</div>
 						<div class="">
-							<?php echo(htmlentities($colComments[$key]->getAuthorText())); ?>
+							<?php echo($colComments[$key]->getAuthorText()); ?>
 						</div>
 					</div>
 				<?php endforeach; ?>

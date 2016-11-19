@@ -20,7 +20,7 @@
                 $this->password = $this->url["pass"];
                 $this->dbName = substr($this->url["path"], 1);
             }
-            $this->connectionString = "mysql:host={$this->host};dbname={$this->dbName}";
+            $this->connectionString = "mysql:host={$this->host};dbname={$this->dbName};charset=utf8";
         }
 
         public function connect() {
