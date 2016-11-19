@@ -3,10 +3,9 @@ UNLAM - snewsportal
 
 Proyecto creado con motivos academicos, El mismo consiste en un Trabajo Práctico realizado para la materia Seguridad en aplicaciones Web, dentro de las consignas se pedía crear una aplicacion web blog-like y atacarla, para luego, poder arreglar aquellos "agujeros" de seguridad en la misma.
 
-Autores
+Autor
 =======
 
-* [Agustin Faggiano](mailto:agustinfaggiano@gmail.com)
 * [Emanuel Farfaro Ruiz](mailto:manufarfaro@gmail.com)
 
 Requisitos
