@@ -106,7 +106,7 @@ INSERT INTO `person` (`person_id`, `userpass`, `name`, `surname`, `mail`, `role_
 (14, '12345678', 'Agustin', 'Faggiano', 'agustinfaggiano@hotmail.com', 2, 1),
 (15, 'babolat', 'Nestor', 'Gutierrez', 'ngutierrez@gmail.com', 3, 1),
 (16, '123456', 'Nora', 'Fernandez', 'nora@nora.com', 3, 1),
-(17, '87654321', 'Emanuel', 'Farfaro', 'manu.farfaro@gmail.com ', 2, 1);
+(17, '87654321', 'Emanuel', 'Farfaro', 'manufarfaro@gmail.com ', 2, 1);
 
 -- --------------------------------------------------------
 
